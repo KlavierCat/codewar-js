@@ -6,8 +6,10 @@ var pairs = {
 };
 
 function DNAStrand(dna){
-  dna.replace(/\D/g, function(match){
+  // map belongs to Array.prototype, and need to 'split' before and 'joint' after
+  // while replace belongs to String.prototype, takes and returns a string
+  dna.replace(/./g, function(match){
     return pairs[match]
   });
 }
-//Call DNAStrand("ATCG") took 0.41499999910593033 milliseconds
+//Call DNAStrand("ATCG") took 0.1599999964237213 milliseconds
