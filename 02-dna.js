@@ -6,8 +6,8 @@ var pairs = {
 };
 
 function DNAStrand(dna){
-  return dna.split("").map(function(symbol){
-    return pairs[symbol];
-  }).join("");
+  dna.replace(/\D/g, function(match){
+    return pairs[match]
+  });
 }
-//Call DNAStrand("ATCG") took 8.599999994039536 milliseconds
+//Call DNAStrand("ATCG") took 0.41499999910593033 milliseconds
