@@ -1,14 +1,13 @@
+var pairs = {
+  A: "T",
+  T: "A",
+  C: "G",
+  G: "C"
+};
+
 function DNAStrand(dna){
-  var dnaPair = {
-    "A": "T",
-    "T": "A",
-    "C": "G",
-    "G": "C"
-  };
-  var dnaOpp = "";
-  for (var i = 0; i < dna.length; i++) {
-    dnaOpp += dnaPair[dna[i]];
-  }
-  return dnaOpp;
+  return dna.split("").map(function(symbol){
+    return pairs[symbol];
+  }).join("");
 }
-//Call DNAStrand("ATCG") took 8.249999999068677 milliseconds
+//Call DNAStrand("ATCG") took 8.599999994039536 milliseconds
